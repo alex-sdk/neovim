@@ -2,9 +2,12 @@ local opt = vim.opt
 
 
 -- Tab / Indentation
-
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
 opt.smartindent = true
-opt.wrap = false
+opt.wrap = true
 
 -- Search 
 
@@ -22,6 +25,7 @@ opt.signcolumn = "yes"
 opt.cmdheight = 1
 opt.scrolloff = 10
 opt.completeopt = "menuone,noinsert,noselect"
+
 -- Behaviour
 
 opt.hidden = true
@@ -34,7 +38,6 @@ opt.backspace = "indent,eol,start"
 opt.splitright = true
 opt.splitbelow = true
 opt.autochdir = false
-opt.iskeyword:append("-")
 opt.mouse:append("a")
 opt.clipboard:append("unnamedplus")
 opt.modifiable = true

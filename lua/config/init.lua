@@ -13,5 +13,35 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 vim.g.maplocalleader= " "
-require("lazy").setup('plugins')
 require("config.options")
+require("config.keymaps")
+
+
+
+local plugins = "plugins"
+
+local opts = {
+	defaults = {
+		lazy = true,
+	},
+	install = {
+		colorscheme = { "nightfox" },
+	},
+	rtp = {
+		disabled_plugins = {
+			"gzip",
+			"matchit",
+			"matchparen",
+			"netrwPlugin",
+			"tarPlugin",
+			"tohtml",
+			"tutor",
+			"zipPlugin",
+		},
+	},
+	change_detection = {
+		notify = false,
+	},
+}
+
+require("lazy").setup(plugins, opts)

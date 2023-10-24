@@ -19,6 +19,7 @@ opt.hlsearch = false
 -- Appearance
 
 opt.relativenumber = true
+opt.nu = true
 opt.termguicolors = true
 opt.colorcolumn = "100"
 opt.signcolumn = "yes"
@@ -42,3 +43,4 @@ opt.mouse:append("a")
 opt.clipboard:append("unnamedplus")
 opt.modifiable = true
 opt.encoding = "UTF-8"
+opt.timeout = false

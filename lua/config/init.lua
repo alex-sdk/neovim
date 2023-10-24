@@ -13,10 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 vim.g.maplocalleader= " "
-require("config.options")
-require("config.keymaps")
-
-
 
 local plugins = "plugins"
 
@@ -25,10 +21,10 @@ local opts = {
 		lazy = true,
 	},
 	install = {
-		colorscheme = { "nightfox" },
+	    colorscheme = { "nightfox" },
 	},
 	rtp = {
-		disabled_plugins = {
+	disabled_plugins = {
 			"gzip",
 			"matchit",
 			"matchparen",
@@ -45,3 +41,8 @@ local opts = {
 }
 
 require("lazy").setup(plugins, opts)
+require("config.options")
+require("config.keymaps")
+-- Telescope init
+pcall(require('telescope').load_extension, 'fzf')
+

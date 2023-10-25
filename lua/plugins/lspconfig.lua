@@ -64,6 +64,9 @@ local config = function()
 		capabilities = capabilities,
 		filetypes = {
 			"typescript",
+			"javascript",
+			"typescriptreact",
+			"javascriptreact",
 		},
 		root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
 	})
@@ -106,8 +109,6 @@ local config = function()
 
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
-	local flake8 = require("efmls-configs.linters.flake8")
-	local black = require("efmls-configs.formatters.black")
 	local eslint_d = require("efmls-configs.linters.eslint_d")
 	local prettierd = require("efmls-configs.formatters.prettier_d")
 	local fixjson = require("efmls-configs.formatters.fixjson")
@@ -131,6 +132,7 @@ local config = function()
 			"markdown",
 			"docker",
 			"solidity",
+			"html",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -153,6 +155,7 @@ local config = function()
 				markdown = { alex, prettierd },
 				docker = { hadolint, prettierd },
 				solidity = { solhint },
+				html = { prettierd },
 			},
 		},
 	})

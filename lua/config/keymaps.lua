@@ -9,6 +9,7 @@ keymap.set("n", "<space>", "<Nop>", { silent = true })
 keymap.set("n", "<C-u>", "<C-u>zz")
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<leader>d", "<cmd>bd<cr>")
+keymap.set("n", "<leader>w", "<cmd>w<cr>")
 
 -- Lazy load
 keymap.set("n", "<leader>l", ":Lazy<CR>", { noremap = true, silent = true })

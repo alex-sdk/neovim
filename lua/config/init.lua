@@ -52,7 +52,7 @@ wk.register({
 		s = {
 			name = "Search with Telescope",
 			f = { "<cmd>Telescope find_files<cr>", "Find File" },
-			o = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
+			o = { "<cmd>Telescope oldfiles<cr>", "Search Recent File" },
 			k = { "<cmd>Telescope keymaps<cr>", "Show Telescope keymaps" },
 			h = { "<cmd>Telescope help_tags<cr>", "Search help tags" },
 			l = { "<cmd>Telescope live_grep<cr>", "Search with grep" },

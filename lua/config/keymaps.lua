@@ -1,26 +1,42 @@
+local mapkey = require("util.keymapper").mapkey
 local keymap = vim.keymap
-local builtin = require('telescope.builtin')
--- General vim
+
+-- General mappings
+keymap.set('n', '<C-c>', '<Esc>', {noremap = true, silent = true})
+keymap.set('i', '<C-c>', '<Esc>', {noremap = true, silent = true})
+keymap.set('x', '<C-c>', '<Esc>', {noremap = true, silent = true})
 keymap.set('n', '<space>', '<Nop>', {silent =true})
 
--- Lazy Vim 
 keymap.set("n", "<leader>l", ":Lazy<CR>", {noremap = true, silent = true})
 
 
--- Telescopcope 
-keymap.set("n", "<leader>gf", builtin.git_files, {desc = 'Search [G]it [F]iles'})
-keymap.set('n', '<leader>?', builtin.oldfiles, { desc = '[?] Find recently opened files' })
-keymap.set('n', '<leader><space>', builtin.buffers, {desc = '[ ] Find existing buffers'})
-keymap.set('n', '<leader>/', function()
-    builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-        windblend = 10,
-        previewer = false,
-    })
-end, {desc = '[/] Fuzzily search in current buffer' })
+-- Buffer Navigation
+mapkey("<leader>bn", "bnext", "n") -- Next buffer
+mapkey("<leader>bp", "bprevious", "n") -- Prev buffer
+mapkey("<leader>bb", "e #", "n") -- Switch to Other Buffer
+mapkey("<leader>`", "e #", "n") -- Switch to Other Buffer
 
-vim.keymap.set('n', '<leader>sf', builtin.find_files, { desc = '[S]earch [F]iles' })
-vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<leader>sw', builtin.grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>sg', builtin.live_grep, { desc = '[S]earch by [G]rep' })
-vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
+-- Pane and Window Navigation
+mapkey("<C-h>", "<C-w>h", "n") -- Navigate Left
+mapkey("<C-j>", "<C-w>j", "n") -- Navigate Down
+mapkey("<C-k>", "<C-w>k", "n") -- Navigate Up
+mapkey("<C-l>", "<C-w>l", "n") -- Navigate Right
+mapkey("<C-h>", "wincmd h", "t") -- Navigate Left
+mapkey("<C-j>", "wincmd j", "t") -- Navigate Down
+mapkey("<C-k>", "wincmd k", "t") -- Navigate Up
+mapkey("<C-l>", "wincmd l", "t") -- Navigate Right
+mapkey("<C-h>", "TmuxNavigateLeft", "n") -- Navigate Left
+mapkey("<C-j>", "TmuxNavigateDown", "n") -- Navigate Down
+mapkey("<C-k>", "TmuxNavigateUp", "n") -- Navigate Up
+mapkey("<C-l>", "TmuxNavigateRight", "n") -- Navigate Right
+
+-- Window Management
+mapkey("<leader>sv", "vsplit", "n") -- Split Vertically
+mapkey("<leader>sm", "MaximizerToggle", "n") -- Toggle Minimise
+
+-- Indenting
+mapkey("<", "v", "<gv") -- Shift Indentation to Left
+mapkey(">", "v", ">gv") -- Shift Indentation to Right
+
+-- Show Full File-Path
+mapkey("<leader>pa", "echo expand('%:p')", "n")

@@ -12,15 +12,6 @@ local config = function()
 			},
 		},
 		pickers = {
-			find_files = {
-				theme = "dropdown",
-				previewer = false,
-				hidden = true,
-			},
-			live_grep = {
-				theme = "dropdown",
-				previewer = false,
-			},
 			buffers = {
 				theme = "dropdown",
 				previewer = false,
@@ -39,11 +30,11 @@ return {
 		mapkey("<leader>sk", "Telescope keymaps", "n"),
 		mapkey("<leader>sh", "Telescope help_tags", "n"),
 		mapkey("<leader>sf", "Telescope find_files", "n"),
-		mapkey("<leader>sg", "Telescope live_grep", "n"),
-		mapkey("<leader><leader>", "Telescope buffers", "n"),
+		mapkey("<leader>sl", "Telescope live_grep", "n"),
+		mapkey("<leader>sb", "Telescope buffers", "n"),
 		mapkey("<leader>sw", "Telescope grep_string", "n"),
 		mapkey("<leader>sd", "Telescope diagnostics", "n"),
-		mapkey("<leader>gf", "Telescope git_files", "n"),
-		mapkey("<leader>go", "Telescope oldfiles", "n")
+		mapkey("<leader>sg", "Telescope git_files", "n"),
+		mapkey("<leader>so", "Telescope oldfiles", "n"),
 	},
 }

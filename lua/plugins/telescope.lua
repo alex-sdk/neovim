@@ -36,5 +36,6 @@ return {
 		mapkey("<leader>sd", "Telescope diagnostics", "n"),
 		mapkey("<leader>sg", "Telescope git_files", "n"),
 		mapkey("<leader>so", "Telescope oldfiles", "n"),
+		mapkey("<leader>sp", "Telescope fd", "n"),
 	},
 }

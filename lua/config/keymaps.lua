@@ -6,7 +6,11 @@ keymap.set("n", "<C-c>", "<Esc>", { noremap = true, silent = true })
 keymap.set("i", "<C-c>", "<Esc>", { noremap = true, silent = true })
 keymap.set("x", "<C-c>", "<Esc>", { noremap = true, silent = true })
 keymap.set("n", "<space>", "<Nop>", { silent = true })
+keymap.set("n", "<C-u>", "<C-u>zz")
+keymap.set("n", "<C-d>", "<C-d>zz")
+keymap.set("n", "<leader>d", "<cmd>bd<cr>")
 
+-- Lazy load
 keymap.set("n", "<leader>l", ":Lazy<CR>", { noremap = true, silent = true })
 
 -- Buffer Navigation
@@ -22,7 +26,6 @@ mapkey("<C-l>", "TmuxNavigateRight", "n") -- Navigate Right
 -- Window Management
 mapkey("<leader>vs", "vsplit", "n") -- Split Vertically
 mapkey("<leader>vh", "hsplit", "n") -- Split Horizontal
-mapkey("<leader>vt", "MaximizerToggle", "n") -- Toggle Minimise
 
 -- Indenting
 mapkey("<", "v", "<gv") -- Shift Indentation to Left

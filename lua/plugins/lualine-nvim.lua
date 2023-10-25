@@ -14,15 +14,15 @@ local config = function()
 			globalstatus = true,
 		},
 		tabline = {
-            lualine_a = { "mode" },
+			lualine_a = { "mode" },
 			lualine_b = { "buffers" },
 			lualine_x = { "encoding", "fileformat", "filetype" },
-        },
-        sections = {},
-        inactive_sections = {
-            lualine_y = {'progess'},
-            lualine_z = {'location'},
-        },
+		},
+		sections = {},
+		inactive_sections = {
+			lualine_y = { "progess" },
+			lualine_z = { "location" },
+		},
 	})
 end
 

@@ -60,6 +60,7 @@ wk.register({
 			w = { "<cmd>Telescope grep_string<cr>", "Search current word" },
 			d = { "<cmd>Telescope diagnostics<cr>", "Search diagnostics" },
 			g = { "<cmd>Telescope git_files<cr>", "Search git files" },
+			p = { "<cmd>Telescope fd<cr>", "Search present working dir" },
 		},
 		g = {
 			name = "Go to definition",
@@ -81,6 +82,9 @@ wk.register({
 		n = {
 			name = "next diagnostic",
 			d = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Jump to next diagnostics" },
+		},
+		v = {
+			name = "Split screen",
 		},
 	},
 })

@@ -55,7 +55,7 @@ wk.register({
 			o = { "<cmd>Telescope oldfiles<cr>", "Search Recent File" },
 			k = { "<cmd>Telescope keymaps<cr>", "Show Telescope keymaps" },
 			h = { "<cmd>Telescope help_tags<cr>", "Search help tags" },
-			l = { "<cmd>Telescope live_grep<cr>", "Search with grep" },
+			G = { "<cmd>Telescope live_grep<cr>", "Search with grep" },
 			b = { "<cmd>Telescope buffers<cr>", "Search current buffer" },
 			w = { "<cmd>Telescope grep_string<cr>", "Search current word" },
 			d = { "<cmd>Telescope diagnostics<cr>", "Search diagnostics" },
@@ -69,22 +69,19 @@ wk.register({
 			D = { "<cmd>Lspsaga goto_definition<cr>", "Go to definition" },
 			n = { "<cmd>Lspsaga rename<cr>", "Rename" },
 		},
-		c = {
+		d = {
 			name = "code diagnostics",
 			a = { "<cmd>Lspsaga code_action<cr>", "see available code actions" },
 			d = { "<cmd>Lspsaga show_line_diagnostics<cr>", "Show line diagnostics" },
-			D = { "<cmd>Lspsaga show_cursor_diagnostics<cr>", "Show cursor diagnostics" },
-		},
-		p = {
-			name = "prev diagnostics",
-			d = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Jump to previous diagnostic" },
-		},
-		n = {
-			name = "next diagnostic",
-			d = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Jump to next diagnostics" },
+			k = { "<cmd>Lspsaga diagnostic_jump_prev<cr>", "Jump to previous diagnostic" },
+			j = { "<cmd>Lspsaga diagnostic_jump_next<cr>", "Jump to next diagnostics" },
 		},
 		v = {
 			name = "Split screen",
+		},
+		p = {
+			name = "show path",
+			a = { "<cmd>echo expand('%:p')<cr>", "Display Path" },
 		},
 	},
 })

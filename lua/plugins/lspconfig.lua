@@ -41,23 +41,6 @@ local config = function()
 		filetypes = { "json", "jsonc" },
 	})
 
-	-- python
-	lspconfig.pyright.setup({
-		capabilities = capabilities,
-		on_attach = on_attach,
-		settings = {
-			pyright = {
-				disableOrganizeImports = false,
-				analysis = {
-					useLibraryCodeForTypes = true,
-					autoSearchPaths = true,
-					diagnosticMode = "workspace",
-					autoImportCompletions = true,
-				},
-			},
-		},
-	})
-
 	-- typescript
 	lspconfig.tsserver.setup({
 		on_attach = on_attach,
@@ -107,6 +90,13 @@ local config = function()
 		on_attach = on_attach,
 	})
 
+	-- css
+	lspconfig.cssls.setup({
+		capabilities = capabilities,
+		on_attach = on_attach,
+		filetypes = { "css" },
+	})
+
 	local luacheck = require("efmls-configs.linters.luacheck")
 	local stylua = require("efmls-configs.formatters.stylua")
 	local eslint_d = require("efmls-configs.linters.eslint_d")
@@ -133,6 +123,7 @@ local config = function()
 			"docker",
 			"solidity",
 			"html",
+			"css",
 		},
 		init_options = {
 			documentFormatting = true,
@@ -156,6 +147,7 @@ local config = function()
 				docker = { hadolint, prettierd },
 				solidity = { solhint },
 				html = { prettierd },
+				css = { prettierd },
 			},
 		},
 	})

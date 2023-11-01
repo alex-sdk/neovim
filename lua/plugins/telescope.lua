@@ -30,7 +30,7 @@ return {
 		mapkey("<leader>sk", "Telescope keymaps", "n"),
 		mapkey("<leader>sh", "Telescope help_tags", "n"),
 		mapkey("<leader>sf", "Telescope find_files", "n"),
-		mapkey("<leader>sl", "Telescope live_grep", "n"),
+		mapkey("<leader>sG", "Telescope live_grep", "n"),
 		mapkey("<leader>sb", "Telescope buffers", "n"),
 		mapkey("<leader>sw", "Telescope grep_string", "n"),
 		mapkey("<leader>sd", "Telescope diagnostics", "n"),
